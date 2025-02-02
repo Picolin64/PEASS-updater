@@ -6,7 +6,7 @@ By default will download and update all Linux and Windows scripts/binaries. You 
 
 ## Usage  
 
-```bash
+```
 ./update-peas.sh [OPTIONS]
 
 Options:

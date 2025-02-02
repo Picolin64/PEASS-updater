@@ -24,7 +24,7 @@ Options:
 	-c, --no-colors
 		Disables use colors in output.
 	-v, --verbose
-		Enables verbose output.\n
+		Enables verbose output.
 
 If you wish to change the scripts/binaries that will be downloaded and updated if basic or minimal modes are enabled, then change the corresponding arrays in the first lines of the code.
 ```

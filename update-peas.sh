@@ -32,15 +32,15 @@ Options:
 	-g, --git-check
 		Enables downloading and updating scripts ONLY if the peass-ng git repo has been updated since the last time this bash script was run. Requires git. 
 	-l, --linux-only
-		Downloads and updates only linux scripts (linpeas). Can't be used in conjuction with -w or --windows-only.
+		Downloads and updates only Linux scripts/binaries (linpeas). Can't be used in conjuction with -w or --windows-only.
 	-w, --windows-only
-		Donwloads and updates only windows scripts (winpeas). Can't be used in conjuction with -l or --linux-only.
+		Downloads and updates only Windows scripts/executables (winpeas). Can't be used in conjuction with -l or --linux-only.
 	-b, --basic
-		Downloads and updates only the basic peass scripts (See note below). Can't be used in conjuction with -m or --minimal.
+		Downloads and updates only the basic scripts/binaries (See note below). Can't be used in conjuction with -m or --minimal.
 	-m, --minimal
-		Donwloads and updates only the minimal peass scripts (See note below). Can't be used in conjuction with -b or --basic.
+		Downloads and updates only the minimal scripts/binaries (See note below). Can't be used in conjuction with -b or --basic.
 	-c, --no-colors
-		Disables use colors in output.
+		Disables use of colors in output.
 	-v, --verbose
 		Enables verbose output.\n
 

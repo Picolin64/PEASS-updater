@@ -5,6 +5,7 @@ Simple bash script that automatically downloads and updates the scripts/binaries
 By default will download update all Linux and Windows scripts/binaries. You can adjust which scripts/binaries will be downloaded and updated using flags.
 
 ## Usage 
+```
 ./update-peas.sh [OPTIONS]
 
 Options:	
@@ -26,3 +27,4 @@ Options:
 		Enables verbose output.\n
 
 If you wish to change the scripts/binaries that will be downloaded and updated if basic or minimal modes are enabled, then change the corresponding arrays in the first lines of the code.
+```

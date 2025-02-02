@@ -2,7 +2,7 @@
 
 Simple bash script that automatically downloads and updates the scripts/binaries from the PEAS suite with their latest releases. Also stores the scripts/binaries in a easy-to-access folder structure for quick use in your pentests and CTFs.
 
-By default will download update all Linux and Windows scripts/binaries. You can adjust which scripts/binaries will be downloaded and updated using flags.
+By default will download and update all Linux and Windows scripts/binaries. You can adjust which scripts/binaries will be downloaded and updated using flags.
 
 ## Usage 
 ```

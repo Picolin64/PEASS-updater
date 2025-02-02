@@ -30,15 +30,15 @@ Options:
 	-h, --help
 		Displays help information.
 	-g, --git-check
-		Enables downloading and updating scripts ONLY if the peass-ng git repo has been updated since the last time this bash script was run. Requires git. 
+		Enables downloading and updating scripts/binaries ONLY if the peass-ng git repo has been updated since the last time this bash script was run. Requires git. 
 	-l, --linux-only
-		Downloads and updates only Linux scripts/binaries (linpeas). Can't be used in conjuction with -w or --windows-only.
+		Downloads and updates only Linux scripts/binaries (linpeas). Can't be used in conjunction with -w or --windows-only.
 	-w, --windows-only
-		Downloads and updates only Windows scripts/executables (winpeas). Can't be used in conjuction with -l or --linux-only.
+		Downloads and updates only Windows scripts/binaries (winpeas). Can't be used in conjunction with -l or --linux-only.
 	-b, --basic
-		Downloads and updates only the basic scripts/binaries (See note below). Can't be used in conjuction with -m or --minimal.
+		Downloads and updates only the basic scripts/binaries (See note below). Can't be used in conjunction with -m or --minimal.
 	-m, --minimal
-		Downloads and updates only the minimal scripts/binaries (See note below). Can't be used in conjuction with -b or --basic.
+		Downloads and updates only the minimal scripts/binaries (See note below). Can't be used in conjunction with -b or --basic.
 	-c, --no-colors
 		Disables use of colors in output.
 	-v, --verbose
@@ -106,13 +106,15 @@ print_failure() {
 # Print help if option was provided
 if $HELP; then printf "$HELP_DISPLAY"; exit 0; fi
 
+set -o pipefail -e	# This is needed to prevent incorrect behavior of the script on unexpected errors such as network issues and such
+
 # If git-check option was provided, then check if git repo has been updated since the last time this bash script was run.
-# Update peass scripts only if the peass-ng git repo has been updated since the last time this script was run. Requires git.
+# Then update peass scripts only if the peass-ng git repo has been updated since the last time this script was run 
+# using the git-check option (otherwise it doesn't keep track of the last hash commit).
+# Requires git.
 
 # Keep in mind that this option doesn't check if every individual script/binary is outdated. 
 # If the git repo has been updated since the last time this script was run, then it will simply assume that all binaries/scripts are outdated.
-set -o pipefail -e
-
 if $GIT_CHECK; then
 	if [[ ! "$(command -v git 2>/dev/null)" ]]; then print_failure "Git is not installed or couldn't be found.\n"; print_failure "Stopping!"; exit 0; fi
 
@@ -182,22 +184,22 @@ fi
 if ! $LINUX_ONLY; then
 	if [ -d ./winpeas ]
 	then
-		if $VERBOSE; then print_informational "Directory for storing Windows scripts/executables exist.\n"; fi
+		if $VERBOSE; then print_informational "Directory for storing Windows scripts/binaries exist.\n"; fi
 	else
-		if $VERBOSE; then print_informational "Directory for storing Windows scripts/executables doesn't exist. Creating directory 'winpeas/'.\n"; fi
+		if $VERBOSE; then print_informational "Directory for storing Windows scripts/binaries doesn't exist. Creating directory 'winpeas/'.\n"; fi
 
 		mkdir winpeas
 	fi
 
-	if $VERBOSE; then print_informational "Updating Windows scripts/executables...\n"; print_informational "The following Windows scripts/binaries will be updated: ${WINPEAS_SCRIPTS[*]} \n"; fi
+	if $VERBOSE; then print_informational "Updating Windows scripts/binaries...\n"; print_informational "The following Windows scripts/binaries will be updated: ${WINPEAS_SCRIPTS[*]} \n"; fi
 
 	for script in "${WINPEAS_SCRIPTS[@]}"
 	do
 		curl -LOs --output-dir ./winpeas https://github.com/peass-ng/PEASS-ng/releases/latest/download/$script
 	done
 
-	if $VERBOSE; then print_success "Windows scripts/executables have been updated!\n"; fi
+	if $VERBOSE; then print_success "Windows scripts/binaries have been updated!\n"; fi
 fi
 
-printf "${GREEN}[+] ${UNDERLINED_GREEN}Scripts/binaries from the PEAS suite have been donwloaded and updated successfully!${NC}"
+printf "${GREEN}[+] ${UNDERLINED_GREEN}Scripts/binaries from the PEAS suite have been downloaded and updated successfully!${NC}"
 set -o pipefail +e

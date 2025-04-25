@@ -92,15 +92,15 @@ if $NO_COLORS; then
 fi
 
 print_success() {
-	printf "${GREEN}[+] $1"
+	printf "${GREEN}[+] $1${NC}"
 }
 
 print_informational() {
-	printf "${YELLOW}[*] $1"
+	printf "${YELLOW}[*] $1${NC}"
 }
 
 print_failure() {
-	printf "${RED}[-] $1"
+	printf "${RED}[-] $1${NC}"
 }
 
 # Print help if option was provided

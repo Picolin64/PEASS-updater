@@ -55,7 +55,7 @@ UNDERLINED_GREEN="${C}[4;32m"
 YELLOW="${C}[1;33m"
 
 print_usage() {
-	printf "See the output of ./$(basename $0) -h for a summary of options."
+	printf "See the output of ./$(basename $0) -h for a summary of options.\n"
 }
 
 print_os_error() {
@@ -201,5 +201,5 @@ if ! $LINUX_ONLY; then
 	if $VERBOSE; then print_success "Windows scripts/binaries have been updated!\n"; fi
 fi
 
-printf "${GREEN}[+] ${UNDERLINED_GREEN}Scripts/binaries from the PEAS suite have been downloaded and updated successfully!${NC}"
+printf "${GREEN}[+] ${UNDERLINED_GREEN}Scripts/binaries from the PEAS suite have been downloaded and updated successfully!${NC}\n"
 set -o pipefail +e

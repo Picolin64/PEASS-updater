@@ -64,6 +64,6 @@ alias winpeas='cd path/to/winpeass/folders && unbuffer tree | sed -e "0,/\./ s?\
 
 ### Result
 
-![peass-alias](peass-alias.png)
-![linpeas-alias](linpeas-alias.png)
-![winpeas-alias](winpeas-alias.png)
+![peass-alias](./images/peass-alias.png)
+![linpeas-alias](./images/linpeas-alias.png)
+![winpeas-alias](./images/winpeas-alias.png)

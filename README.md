@@ -32,7 +32,7 @@ If you wish to change the scripts/binaries that will be downloaded and updated i
 
 ## Installing
 
-Clone the git repository with ``git clone https://github.com/Picolin64/peas-updater.git`` and rename the main folder to ``peass``, or download directly the PEASS-updater.sh script and store it in a folder named ``peass``.
+Clone the git repository with ``git clone https://github.com/Picolin64/PEASS-updater`` and rename the main folder to ``peass``, or download directly the PEASS-updater.sh script and store it in a folder named ``peass``.
 
 ## FAQ
 

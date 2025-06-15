@@ -19,7 +19,7 @@ MODE='all'	# all (default), basic or minimal
 NO_COLORS=false
 VERBOSE=false
 
-HELP_DISPLAY="peas-updater
+HELP_DISPLAY="PEASS-updater
 
 By default will download and update all Linux and Windows scripts/binaries from the PEAS suite with their latest releases. You can adjust which scripts/binaries will be updated with the options below.
 

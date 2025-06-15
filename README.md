@@ -1,13 +1,13 @@
-# peas-updater
+# PEASS-updater
 
-Simple bash script that automatically downloads and updates the scripts/binaries from the PEAS suite with their latest releases. Also stores the scripts/binaries in a easy-to-access folder structure for quick use in your pentests and CTFs.
+Simple Bash script that automatically downloads and updates the scripts/binaries from the PEAS suite with their latest releases. Also stores the scripts/binaries in a easy-to-access folder structure for quick use in your pentests and CTFs.
 
-By default will download and update all Linux and Windows scripts/binaries. You can adjust which scripts/binaries will be downloaded and updated using flags. You can also enable downloading and updating scripts ONLY if the peass-ng git repo has been updated since the last time this bash script was run, using the corresponding flags.
+By default will download and update all Linux and Windows scripts/binaries. You can adjust which scripts/binaries will be downloaded and updated using flags. You can also enable downloading and updating scripts ONLY if the PEASS-ng git repo has been updated since the last time this bash script was run, using the corresponding flags.
 
 ## Usage  
 
 ```
-./update-peas.sh [OPTIONS]
+./PEASS-updater.sh [OPTIONS]
 
 Options:
 	-h, --help
@@ -36,15 +36,15 @@ Clone the git repository with ``git clone https://github.com/Picolin64/peas-upda
 
 ## FAQ
 
-**Q: Why not just clone the peass-ng repository?**
+**Q: Why not just clone the PEASS-ng repository?**
 
-**A:** The peass-ng repository doesn't contain most of the scripts and binaries you might need in its source code, only a few Windows binaries. Instead, almost all the scripts and binaries have to be manually downloaded in their releases page.
+**A:** The PEASS-ng repository doesn't contain most of the scripts and binaries you might need in its source code, only a few Windows binaries. Instead, almost all the scripts and binaries have to be manually downloaded in their releases page.
 
 **Q: Why not simply use the peass package that can be installed with apt?**
 
-**A:** The peass package that can be installed with apt isn't updated in a weekly basis, as opposed to the peass-ng repository. Also, the peass package installs ALL the scripts and binaries from the PEAS suite; but you may not want to use all of them. For example, you might just want to keep the most basic scripts and binaries updated such as linpeas.sh, winPEASx64.exe and winPEASx86.exe. You can download and keep updated only these few scripts/binaries with the -m or --minimal flags.
+**A:** The PEASS package that can be installed with apt isn't updated in a weekly basis, as opposed to the PEASS-ng repository. Also, the PEASS package installs ALL the scripts and binaries from the PEAS suite; but you may not want to use all of them. For example, you might just want to keep the most basic scripts and binaries updated such as linpeas.sh, winPEASx64.exe and winPEASx86.exe. You can download and keep updated only these few scripts/binaries with the -m or --minimal flags.
 
-This script also allows to update the binaries and scripts only if the peass-ng repository was updated since the last time this script was run, using the -g or --git-check flags. These options might come handy for someone with slow internet speed, who knows. (Also I made this project mainly to practice Bash scripting, don't be hard on me).
+This script also allows to update the binaries and scripts only if the PEASS-ng repository was updated since the last time this script was run, using the -g or --git-check flags. These options might come handy for someone with slow internet speed, who knows. (Also I made this project mainly to practice Bash scripting, don't be hard on me).
 
 ## Bonus track
 

@@ -127,7 +127,7 @@ if $GIT_CHECK; then
 	fi
 
 	if [[ $CURRENT_COMMIT == $(cat ./.last-commit) ]]; then 
-		print_informational "All scripts/binaries are already updated.\n"; print_informational "Stopping!"
+		print_informational "All scripts/binaries are already updated.\n";
 		exit 0
 	fi
 
